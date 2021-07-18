@@ -12,8 +12,8 @@ The repo is intended to run on Atlas-SoC board with Cyclone-V ARM-FPGA chip. Fur
 ###### Atlas-SoC board (top)
 ![./Documentation/Board-Top.jpg](./Documentation/Board-Top.jpg?raw=true "Atlas-SoC board (top)")
 
-[//]: <> ###### Atlas-SoC board (bottom)
-[//]: <> ![./Documentation/Board-Bottom.jpg](./Documentation/Board-Bottom.jpg?raw=true "Atlas-SoC board (bottom)")
+<> ###### Atlas-SoC board (bottom)
+<> ![./Documentation/Board-Bottom.jpg](./Documentation/Board-Bottom.jpg?raw=true "Atlas-SoC board (bottom)")
 
 ###### Custom support board to house IMUs and Radio
 ![./Quad_support_board/pcb.png](./Quad_support_board/pcb.png?raw=true "Quad Support Board")
