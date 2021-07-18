@@ -14,12 +14,12 @@ The repo is intended to run on Atlas-SoC board with Cyclone-V ARM-FPGA chip. Fur
 ###### Atlas-SoC board (bottom)
 ![./Documentation/Board-Bottom.jpg](./Documentation/Board-Bottom.jpg?raw=true "Atlas-SoC board (bottom)")
 ###### Custom support board to house IMUs and Radio
-![./Quad support board/pcb.png](./Quad support board/pcb.png?raw=true "Quad Support Board")
+![./Quad_support_board/pcb.png](./Quad_support_board/pcb.png?raw=true "Quad Support Board")
 ###### Inertial measurement unit (IMU) MPU 6500
 ![./Documentation/PMU6500.png](./Documentation/PMU6500.png?raw=true "MPU 6500")
 ###### Radio Flysky FS-iA10B
 The pins for UART communication are highligted (UART TX (cyan) and RX (green))
-![./Documentation/Flysky FS-IA10B.png](./Documentation/Flysky FS-IA10B.png?raw=true "Flysky FS-iA10B")
+![./Documentation/Flysky_FS-IA10B.png](./Documentation/Flysky_FS-IA10B.png?raw=true "Flysky FS-iA10B")
 
 ## Cyclone-V
 Cyclone-V from Altera, or Zinq-7000 Xilinx (the only competitor at the moment), is a hybrid architecture integrating ARM core(s) and FPGA fabric coupled with Interconnect on single System-on-Chip (SoC) device. The internal architerure is depicted below.
