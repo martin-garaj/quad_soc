@@ -21,12 +21,14 @@ Cyclone-V from Altera, or Zinq-7000 Xilinx (the only competitor at the moment), 
 # Quad SoC on Cyclone-V
 The Quad SoC uses both the ARM and FPGA to implement **multi-processor** system. 
 - ARM
-  - runs Linux
   - executes high level functions provided the data from Nios II co-processors
+  - control software is running in Linux with underlying custom communication layer _control software -> Linux -> FPGA -> Nios II co-processors_ and vice-versa
 - FPGA
   - AUX radio
     - Nios II co-processor responsible for handling communication with external radio transciever through UART
   - AUX imu
     - Nios II co-processor responsible for managing and collecting data from up to 4 IMUs through I2C
+The content of FPGA, connections in FPGA fabric, GPIO connections and external components are shown below.
 
-
+###### Cyclone-V internal structure
+![./Documentation/Quad_SoC_hardware_software.png](./Documentation/Quad_SoC_hardware_software.png?raw=true "Quad SoC structure and components")
