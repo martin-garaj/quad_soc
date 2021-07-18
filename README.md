@@ -25,8 +25,8 @@ The Quad SoC uses both the ARM and FPGA to implement **multi-processor** system.
   - executes high level functions provided the data from Nios II co-processors
 - FPGA
   - AUX radio
-   - Nios II co-processor responsible for handling communication with external radio transciever through UART
+    - Nios II co-processor responsible for handling communication with external radio transciever through UART
   - AUX imu
-   - Nios II co-processor responsible for managing and collecting data from up to 4 IMUs through I2C
+    - Nios II co-processor responsible for managing and collecting data from up to 4 IMUs through I2C
 
 
