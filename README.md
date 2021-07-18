@@ -44,6 +44,5 @@ For **TL;DR**, the Quartus II project has 1.5 GB and is based on default Golden 
 ![./Documentation/Quad_SoC_hardware_software_v2.png](./Documentation/Quad_SoC_hardware_software_v2.png?raw=true "Quad SoC structure and components")
 
 
-
-
-
+###### Files
+[Qsys.png](./Documentation/Qsys.png)
