@@ -79,6 +79,7 @@ Custom PCB board that fits on top of the Atlas-SoC board. It provides a simple w
 ![./Quad_support_board/pcb.png](./Quad_support_board/pcb.png?raw=true "Quad Support Board")
 
 ###### Inertial measurement unit (IMU) MPU 6050
+NOTE: mind the pinout of the MPU 6050 board.
 ![./Documentation/PMU6050.png](./Documentation/PMU6500.png?raw=true "MPU 6050")
 
 ###### Radio Flysky FS-iA10B
@@ -98,9 +99,9 @@ The Quad SoC uses both the ARM and FPGA to implement **multi-processor** system.
   - executes high level functions provided the data from Nios II co-processors
   - control software is running in Linux with underlying custom communication layer _control software -> Linux -> FPGA -> Nios II co-processors_ and vice-versa
 - FPGA
-  - AUX radio
+  - aux radio
     - Nios II co-processor responsible for handling communication with external radio transciever through UART
-  - AUX imu
+  - aux imu
     - Nios II co-processor responsible for managing and collecting data from up to 4 IMUs through I2C
 The content of FPGA, connections in FPGA fabric, GPIO connections and external components are shown below.
 
