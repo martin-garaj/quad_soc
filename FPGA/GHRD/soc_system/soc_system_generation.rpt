@@ -1,0 +1,303 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate C:\PROJECTS\GHRD_quad_v4_0\GHRD\soc_system.qsys --block-symbol-file --output-directory=C:\PROJECTS\GHRD_quad_v4_0\GHRD\soc_system --family="Cyclone V" --part=5CSEMA4U23C6
+Progress: Loading GHRD/soc_system.qsys
+Progress: Reading input file
+Progress: Adding aux_imu_0 [altera_nios2_gen2 16.0]
+Progress: Parameterizing module aux_imu_0
+Progress: Adding aux_imu_0_jtag [altera_avalon_jtag_uart 16.0]
+Progress: Parameterizing module aux_imu_0_jtag
+Progress: Adding aux_imu_0_led [altera_avalon_pio 16.0]
+Progress: Parameterizing module aux_imu_0_led
+Progress: Adding aux_imu_0_mem [altera_avalon_onchip_memory2 16.0]
+Progress: Parameterizing module aux_imu_0_mem
+Progress: Adding aux_imu_0_ram [altera_avalon_onchip_memory2 16.0]
+Progress: Parameterizing module aux_imu_0_ram
+Progress: Adding aux_radio_0 [altera_nios2_gen2 16.0]
+Progress: Parameterizing module aux_radio_0
+Progress: Adding aux_radio_0_jtag [altera_avalon_jtag_uart 16.0]
+Progress: Parameterizing module aux_radio_0_jtag
+Progress: Adding aux_radio_0_led [altera_avalon_pio 16.0]
+Progress: Parameterizing module aux_radio_0_led
+Progress: Adding aux_radio_0_mem [altera_avalon_onchip_memory2 16.0]
+Progress: Parameterizing module aux_radio_0_mem
+Progress: Adding aux_radio_0_ram [altera_avalon_onchip_memory2 16.0]
+Progress: Parameterizing module aux_radio_0_ram
+Progress: Adding aux_radio_0_sysid [altera_avalon_sysid_qsys 16.0]
+Progress: Parameterizing module aux_radio_0_sysid
+Progress: Adding clk_0 [clock_source 16.0]
+Progress: Parameterizing module clk_0
+Progress: Adding hps_0 [altera_hps 16.0]
+Progress: Parameterizing module hps_0
+Progress: Adding hps_0_led [altera_avalon_pio 16.0]
+Progress: Parameterizing module hps_0_led
+Progress: Adding i2c_0 [i2c 1.0]
+Progress: Parameterizing module i2c_0
+Progress: Adding pll_0 [altera_pll 16.0]
+Progress: Parameterizing module pll_0
+Progress: Adding pwm_0 [pwm 1.0]
+Progress: Parameterizing module pwm_0
+Progress: Adding pwm_1 [pwm 1.0]
+Progress: Parameterizing module pwm_1
+Progress: Adding reset_0 [altera_avalon_pio 16.0]
+Progress: Parameterizing module reset_0
+Progress: Adding select_0 [altera_avalon_pio 16.0]
+Progress: Parameterizing module select_0
+Progress: Adding sysid_qsys_0 [altera_avalon_sysid_qsys 16.0]
+Progress: Parameterizing module sysid_qsys_0
+Progress: Adding uart_0 [altera_avalon_uart 16.0]
+Progress: Parameterizing module uart_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: soc_system.aux_imu_0_jtag: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: soc_system.aux_radio_0_jtag: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: soc_system.aux_radio_0_sysid: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
+Info: soc_system.aux_radio_0_sysid: Time stamp will be automatically updated when this component is generated.
+Info: soc_system.hps_0: HPS Main PLL counter settings: n = 0  m = 73
+Info: soc_system.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Warning: soc_system.hps_0: "Configuration/HPS-to-FPGA user 0 clock frequency" (desired_cfg_clk_mhz) requested 100.0 MHz, but only achieved 97.368421 MHz
+Warning: soc_system.hps_0: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
+Info: soc_system.pll_0: The legal reference clock frequency is 5.0 MHz..800.0 MHz
+Info: soc_system.pll_0: Able to implement PLL with user settings
+Info: soc_system.sysid_qsys_0: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
+Info: soc_system.sysid_qsys_0: Time stamp will be automatically updated when this component is generated.
+Warning: soc_system.pll_0: pll_0.locked must be exported, or connected to a matching conduit.
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\PROJECTS\GHRD_quad_v4_0\GHRD\soc_system.qsys --synthesis=VERILOG --output-directory=C:\PROJECTS\GHRD_quad_v4_0\GHRD\soc_system\synthesis --family="Cyclone V" --part=5CSEMA4U23C6
+Progress: Loading GHRD/soc_system.qsys
+Progress: Reading input file
+Progress: Adding aux_imu_0 [altera_nios2_gen2 16.0]
+Progress: Parameterizing module aux_imu_0
+Progress: Adding aux_imu_0_jtag [altera_avalon_jtag_uart 16.0]
+Progress: Parameterizing module aux_imu_0_jtag
+Progress: Adding aux_imu_0_led [altera_avalon_pio 16.0]
+Progress: Parameterizing module aux_imu_0_led
+Progress: Adding aux_imu_0_mem [altera_avalon_onchip_memory2 16.0]
+Progress: Parameterizing module aux_imu_0_mem
+Progress: Adding aux_imu_0_ram [altera_avalon_onchip_memory2 16.0]
+Progress: Parameterizing module aux_imu_0_ram
+Progress: Adding aux_radio_0 [altera_nios2_gen2 16.0]
+Progress: Parameterizing module aux_radio_0
+Progress: Adding aux_radio_0_jtag [altera_avalon_jtag_uart 16.0]
+Progress: Parameterizing module aux_radio_0_jtag
+Progress: Adding aux_radio_0_led [altera_avalon_pio 16.0]
+Progress: Parameterizing module aux_radio_0_led
+Progress: Adding aux_radio_0_mem [altera_avalon_onchip_memory2 16.0]
+Progress: Parameterizing module aux_radio_0_mem
+Progress: Adding aux_radio_0_ram [altera_avalon_onchip_memory2 16.0]
+Progress: Parameterizing module aux_radio_0_ram
+Progress: Adding aux_radio_0_sysid [altera_avalon_sysid_qsys 16.0]
+Progress: Parameterizing module aux_radio_0_sysid
+Progress: Adding clk_0 [clock_source 16.0]
+Progress: Parameterizing module clk_0
+Progress: Adding hps_0 [altera_hps 16.0]
+Progress: Parameterizing module hps_0
+Progress: Adding hps_0_led [altera_avalon_pio 16.0]
+Progress: Parameterizing module hps_0_led
+Progress: Adding i2c_0 [i2c 1.0]
+Progress: Parameterizing module i2c_0
+Progress: Adding pll_0 [altera_pll 16.0]
+Progress: Parameterizing module pll_0
+Progress: Adding pwm_0 [pwm 1.0]
+Progress: Parameterizing module pwm_0
+Progress: Adding pwm_1 [pwm 1.0]
+Progress: Parameterizing module pwm_1
+Progress: Adding reset_0 [altera_avalon_pio 16.0]
+Progress: Parameterizing module reset_0
+Progress: Adding select_0 [altera_avalon_pio 16.0]
+Progress: Parameterizing module select_0
+Progress: Adding sysid_qsys_0 [altera_avalon_sysid_qsys 16.0]
+Progress: Parameterizing module sysid_qsys_0
+Progress: Adding uart_0 [altera_avalon_uart 16.0]
+Progress: Parameterizing module uart_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: soc_system.aux_imu_0_jtag: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: soc_system.aux_radio_0_jtag: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: soc_system.aux_radio_0_sysid: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
+Info: soc_system.aux_radio_0_sysid: Time stamp will be automatically updated when this component is generated.
+Info: soc_system.hps_0: HPS Main PLL counter settings: n = 0  m = 73
+Info: soc_system.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Warning: soc_system.hps_0: "Configuration/HPS-to-FPGA user 0 clock frequency" (desired_cfg_clk_mhz) requested 100.0 MHz, but only achieved 97.368421 MHz
+Warning: soc_system.hps_0: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
+Info: soc_system.pll_0: The legal reference clock frequency is 5.0 MHz..800.0 MHz
+Info: soc_system.pll_0: Able to implement PLL with user settings
+Info: soc_system.sysid_qsys_0: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
+Info: soc_system.sysid_qsys_0: Time stamp will be automatically updated when this component is generated.
+Warning: soc_system.pll_0: pll_0.locked must be exported, or connected to a matching conduit.
+Info: soc_system: Generating soc_system "soc_system" for QUARTUS_SYNTH
+Warning: hps_0.f2h_irq0: Cannot connect clock for irq_mapper_002.sender
+Warning: hps_0.f2h_irq0: Cannot connect reset for irq_mapper_002.sender
+Warning: hps_0.f2h_irq1: Cannot connect clock for irq_mapper_003.sender
+Warning: hps_0.f2h_irq1: Cannot connect reset for irq_mapper_003.sender
+Info: aux_imu_0: "soc_system" instantiated altera_nios2_gen2 "aux_imu_0"
+Info: aux_imu_0_jtag: Starting RTL generation for module 'soc_system_aux_imu_0_jtag'
+Info: aux_imu_0_jtag:   Generation command is [exec C:/programs/quartus/quartus/bin64/perl/bin/perl.exe -I C:/programs/quartus/quartus/bin64/perl/lib -I C:/programs/quartus/quartus/sopc_builder/bin/europa -I C:/programs/quartus/quartus/sopc_builder/bin/perl_lib -I C:/programs/quartus/quartus/sopc_builder/bin -I C:/programs/quartus/quartus/../ip/altera/sopc_builder_ip/common -I C:/programs/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/programs/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=soc_system_aux_imu_0_jtag --dir=C:/Users/mgaraj2/AppData/Local/Temp/alt7561_1618852006672974923.dir/0001_aux_imu_0_jtag_gen/ --quartus_dir=C:/programs/quartus/quartus --verilog --config=C:/Users/mgaraj2/AppData/Local/Temp/alt7561_1618852006672974923.dir/0001_aux_imu_0_jtag_gen//soc_system_aux_imu_0_jtag_component_configuration.pl  --do_build_sim=0  ]
+Info: aux_imu_0_jtag: Done RTL generation for module 'soc_system_aux_imu_0_jtag'
+Info: aux_imu_0_jtag: "soc_system" instantiated altera_avalon_jtag_uart "aux_imu_0_jtag"
+Info: aux_imu_0_led: Starting RTL generation for module 'soc_system_aux_imu_0_led'
+Info: aux_imu_0_led:   Generation command is [exec C:/programs/quartus/quartus/bin64/perl/bin/perl.exe -I C:/programs/quartus/quartus/bin64/perl/lib -I C:/programs/quartus/quartus/sopc_builder/bin/europa -I C:/programs/quartus/quartus/sopc_builder/bin/perl_lib -I C:/programs/quartus/quartus/sopc_builder/bin -I C:/programs/quartus/quartus/../ip/altera/sopc_builder_ip/common -I C:/programs/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/programs/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_aux_imu_0_led --dir=C:/Users/mgaraj2/AppData/Local/Temp/alt7561_1618852006672974923.dir/0002_aux_imu_0_led_gen/ --quartus_dir=C:/programs/quartus/quartus --verilog --config=C:/Users/mgaraj2/AppData/Local/Temp/alt7561_1618852006672974923.dir/0002_aux_imu_0_led_gen//soc_system_aux_imu_0_led_component_configuration.pl  --do_build_sim=0  ]
+Info: aux_imu_0_led: Done RTL generation for module 'soc_system_aux_imu_0_led'
+Info: aux_imu_0_led: "soc_system" instantiated altera_avalon_pio "aux_imu_0_led"
+Info: aux_imu_0_mem: Starting RTL generation for module 'soc_system_aux_imu_0_mem'
+Info: aux_imu_0_mem:   Generation command is [exec C:/programs/quartus/quartus/bin64/perl/bin/perl.exe -I C:/programs/quartus/quartus/bin64/perl/lib -I C:/programs/quartus/quartus/sopc_builder/bin/europa -I C:/programs/quartus/quartus/sopc_builder/bin/perl_lib -I C:/programs/quartus/quartus/sopc_builder/bin -I C:/programs/quartus/quartus/../ip/altera/sopc_builder_ip/common -I C:/programs/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/programs/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=soc_system_aux_imu_0_mem --dir=C:/Users/mgaraj2/AppData/Local/Temp/alt7561_1618852006672974923.dir/0003_aux_imu_0_mem_gen/ --quartus_dir=C:/programs/quartus/quartus --verilog --config=C:/Users/mgaraj2/AppData/Local/Temp/alt7561_1618852006672974923.dir/0003_aux_imu_0_mem_gen//soc_system_aux_imu_0_mem_component_configuration.pl  --do_build_sim=0  ]
+Info: aux_imu_0_mem: Done RTL generation for module 'soc_system_aux_imu_0_mem'
+Info: aux_imu_0_mem: "soc_system" instantiated altera_avalon_onchip_memory2 "aux_imu_0_mem"
+Info: aux_imu_0_ram: Starting RTL generation for module 'soc_system_aux_imu_0_ram'
+Info: aux_imu_0_ram:   Generation command is [exec C:/programs/quartus/quartus/bin64/perl/bin/perl.exe -I C:/programs/quartus/quartus/bin64/perl/lib -I C:/programs/quartus/quartus/sopc_builder/bin/europa -I C:/programs/quartus/quartus/sopc_builder/bin/perl_lib -I C:/programs/quartus/quartus/sopc_builder/bin -I C:/programs/quartus/quartus/../ip/altera/sopc_builder_ip/common -I C:/programs/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/programs/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=soc_system_aux_imu_0_ram --dir=C:/Users/mgaraj2/AppData/Local/Temp/alt7561_1618852006672974923.dir/0004_aux_imu_0_ram_gen/ --quartus_dir=C:/programs/quartus/quartus --verilog --config=C:/Users/mgaraj2/AppData/Local/Temp/alt7561_1618852006672974923.dir/0004_aux_imu_0_ram_gen//soc_system_aux_imu_0_ram_component_configuration.pl  --do_build_sim=0  ]
+Info: aux_imu_0_ram: Done RTL generation for module 'soc_system_aux_imu_0_ram'
+Info: aux_imu_0_ram: "soc_system" instantiated altera_avalon_onchip_memory2 "aux_imu_0_ram"
+Info: aux_radio_0: "soc_system" instantiated altera_nios2_gen2 "aux_radio_0"
+Info: aux_radio_0_led: Starting RTL generation for module 'soc_system_aux_radio_0_led'
+Info: aux_radio_0_led:   Generation command is [exec C:/programs/quartus/quartus/bin64/perl/bin/perl.exe -I C:/programs/quartus/quartus/bin64/perl/lib -I C:/programs/quartus/quartus/sopc_builder/bin/europa -I C:/programs/quartus/quartus/sopc_builder/bin/perl_lib -I C:/programs/quartus/quartus/sopc_builder/bin -I C:/programs/quartus/quartus/../ip/altera/sopc_builder_ip/common -I C:/programs/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/programs/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_aux_radio_0_led --dir=C:/Users/mgaraj2/AppData/Local/Temp/alt7561_1618852006672974923.dir/0005_aux_radio_0_led_gen/ --quartus_dir=C:/programs/quartus/quartus --verilog --config=C:/Users/mgaraj2/AppData/Local/Temp/alt7561_1618852006672974923.dir/0005_aux_radio_0_led_gen//soc_system_aux_radio_0_led_component_configuration.pl  --do_build_sim=0  ]
+Info: aux_radio_0_led: Done RTL generation for module 'soc_system_aux_radio_0_led'
+Info: aux_radio_0_led: "soc_system" instantiated altera_avalon_pio "aux_radio_0_led"
+Info: aux_radio_0_mem: Starting RTL generation for module 'soc_system_aux_radio_0_mem'
+Info: aux_radio_0_mem:   Generation command is [exec C:/programs/quartus/quartus/bin64/perl/bin/perl.exe -I C:/programs/quartus/quartus/bin64/perl/lib -I C:/programs/quartus/quartus/sopc_builder/bin/europa -I C:/programs/quartus/quartus/sopc_builder/bin/perl_lib -I C:/programs/quartus/quartus/sopc_builder/bin -I C:/programs/quartus/quartus/../ip/altera/sopc_builder_ip/common -I C:/programs/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/programs/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=soc_system_aux_radio_0_mem --dir=C:/Users/mgaraj2/AppData/Local/Temp/alt7561_1618852006672974923.dir/0006_aux_radio_0_mem_gen/ --quartus_dir=C:/programs/quartus/quartus --verilog --config=C:/Users/mgaraj2/AppData/Local/Temp/alt7561_1618852006672974923.dir/0006_aux_radio_0_mem_gen//soc_system_aux_radio_0_mem_component_configuration.pl  --do_build_sim=0  ]
+Info: aux_radio_0_mem: Done RTL generation for module 'soc_system_aux_radio_0_mem'
+Info: aux_radio_0_mem: "soc_system" instantiated altera_avalon_onchip_memory2 "aux_radio_0_mem"
+Info: aux_radio_0_ram: Starting RTL generation for module 'soc_system_aux_radio_0_ram'
+Info: aux_radio_0_ram:   Generation command is [exec C:/programs/quartus/quartus/bin64/perl/bin/perl.exe -I C:/programs/quartus/quartus/bin64/perl/lib -I C:/programs/quartus/quartus/sopc_builder/bin/europa -I C:/programs/quartus/quartus/sopc_builder/bin/perl_lib -I C:/programs/quartus/quartus/sopc_builder/bin -I C:/programs/quartus/quartus/../ip/altera/sopc_builder_ip/common -I C:/programs/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/programs/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=soc_system_aux_radio_0_ram --dir=C:/Users/mgaraj2/AppData/Local/Temp/alt7561_1618852006672974923.dir/0007_aux_radio_0_ram_gen/ --quartus_dir=C:/programs/quartus/quartus --verilog --config=C:/Users/mgaraj2/AppData/Local/Temp/alt7561_1618852006672974923.dir/0007_aux_radio_0_ram_gen//soc_system_aux_radio_0_ram_component_configuration.pl  --do_build_sim=0  ]
+Info: aux_radio_0_ram: Done RTL generation for module 'soc_system_aux_radio_0_ram'
+Info: aux_radio_0_ram: "soc_system" instantiated altera_avalon_onchip_memory2 "aux_radio_0_ram"
+Info: aux_radio_0_sysid: "soc_system" instantiated altera_avalon_sysid_qsys "aux_radio_0_sysid"
+Info: hps_0: "Running  for module: hps_0"
+Info: hps_0: HPS Main PLL counter settings: n = 0  m = 73
+Info: hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Warning: hps_0: "Configuration/HPS-to-FPGA user 0 clock frequency" (desired_cfg_clk_mhz) requested 100.0 MHz, but only achieved 97.368421 MHz
+Warning: hps_0: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
+Info: hps_0: "soc_system" instantiated altera_hps "hps_0"
+Info: hps_0_led: Starting RTL generation for module 'soc_system_hps_0_led'
+Info: hps_0_led:   Generation command is [exec C:/programs/quartus/quartus/bin64/perl/bin/perl.exe -I C:/programs/quartus/quartus/bin64/perl/lib -I C:/programs/quartus/quartus/sopc_builder/bin/europa -I C:/programs/quartus/quartus/sopc_builder/bin/perl_lib -I C:/programs/quartus/quartus/sopc_builder/bin -I C:/programs/quartus/quartus/../ip/altera/sopc_builder_ip/common -I C:/programs/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/programs/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_hps_0_led --dir=C:/Users/mgaraj2/AppData/Local/Temp/alt7561_1618852006672974923.dir/0009_hps_0_led_gen/ --quartus_dir=C:/programs/quartus/quartus --verilog --config=C:/Users/mgaraj2/AppData/Local/Temp/alt7561_1618852006672974923.dir/0009_hps_0_led_gen//soc_system_hps_0_led_component_configuration.pl  --do_build_sim=0  ]
+Info: hps_0_led: Done RTL generation for module 'soc_system_hps_0_led'
+Info: hps_0_led: "soc_system" instantiated altera_avalon_pio "hps_0_led"
+Info: i2c_0: "soc_system" instantiated i2c "i2c_0"
+Info: pll_0: "soc_system" instantiated altera_pll "pll_0"
+Info: pwm_0: "soc_system" instantiated pwm "pwm_0"
+Info: reset_0: Starting RTL generation for module 'soc_system_reset_0'
+Info: reset_0:   Generation command is [exec C:/programs/quartus/quartus/bin64/perl/bin/perl.exe -I C:/programs/quartus/quartus/bin64/perl/lib -I C:/programs/quartus/quartus/sopc_builder/bin/europa -I C:/programs/quartus/quartus/sopc_builder/bin/perl_lib -I C:/programs/quartus/quartus/sopc_builder/bin -I C:/programs/quartus/quartus/../ip/altera/sopc_builder_ip/common -I C:/programs/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/programs/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_reset_0 --dir=C:/Users/mgaraj2/AppData/Local/Temp/alt7561_1618852006672974923.dir/0013_reset_0_gen/ --quartus_dir=C:/programs/quartus/quartus --verilog --config=C:/Users/mgaraj2/AppData/Local/Temp/alt7561_1618852006672974923.dir/0013_reset_0_gen//soc_system_reset_0_component_configuration.pl  --do_build_sim=0  ]
+Info: reset_0: Done RTL generation for module 'soc_system_reset_0'
+Info: reset_0: "soc_system" instantiated altera_avalon_pio "reset_0"
+Info: select_0: Starting RTL generation for module 'soc_system_select_0'
+Info: select_0:   Generation command is [exec C:/programs/quartus/quartus/bin64/perl/bin/perl.exe -I C:/programs/quartus/quartus/bin64/perl/lib -I C:/programs/quartus/quartus/sopc_builder/bin/europa -I C:/programs/quartus/quartus/sopc_builder/bin/perl_lib -I C:/programs/quartus/quartus/sopc_builder/bin -I C:/programs/quartus/quartus/../ip/altera/sopc_builder_ip/common -I C:/programs/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/programs/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_select_0 --dir=C:/Users/mgaraj2/AppData/Local/Temp/alt7561_1618852006672974923.dir/0014_select_0_gen/ --quartus_dir=C:/programs/quartus/quartus --verilog --config=C:/Users/mgaraj2/AppData/Local/Temp/alt7561_1618852006672974923.dir/0014_select_0_gen//soc_system_select_0_component_configuration.pl  --do_build_sim=0  ]
+Info: select_0: Done RTL generation for module 'soc_system_select_0'
+Info: select_0: "soc_system" instantiated altera_avalon_pio "select_0"
+Info: sysid_qsys_0: "soc_system" instantiated altera_avalon_sysid_qsys "sysid_qsys_0"
+Info: uart_0: Starting RTL generation for module 'soc_system_uart_0'
+Info: uart_0:   Generation command is [exec C:/programs/quartus/quartus/bin64/perl/bin/perl.exe -I C:/programs/quartus/quartus/bin64/perl/lib -I C:/programs/quartus/quartus/sopc_builder/bin/europa -I C:/programs/quartus/quartus/sopc_builder/bin/perl_lib -I C:/programs/quartus/quartus/sopc_builder/bin -I C:/programs/quartus/quartus/../ip/altera/sopc_builder_ip/common -I C:/programs/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_uart -- C:/programs/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_uart/generate_rtl.pl --name=soc_system_uart_0 --dir=C:/Users/mgaraj2/AppData/Local/Temp/alt7561_1618852006672974923.dir/0016_uart_0_gen/ --quartus_dir=C:/programs/quartus/quartus --verilog --config=C:/Users/mgaraj2/AppData/Local/Temp/alt7561_1618852006672974923.dir/0016_uart_0_gen//soc_system_uart_0_component_configuration.pl  --do_build_sim=0  ]
+Info: uart_0: Done RTL generation for module 'soc_system_uart_0'
+Info: uart_0: "soc_system" instantiated altera_avalon_uart "uart_0"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_005: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_006: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_007: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_008: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_009: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_010: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_011: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_012: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_013: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_014: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_015: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_016: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_017: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_018: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_019: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_020: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "soc_system" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: irq_mapper: "soc_system" instantiated altera_irq_mapper "irq_mapper"
+Info: irq_mapper_001: "soc_system" instantiated altera_irq_mapper "irq_mapper_001"
+Info: irq_mapper_002: "soc_system" instantiated altera_irq_mapper "irq_mapper_002"
+Info: rst_controller: "soc_system" instantiated altera_reset_controller "rst_controller"
+Info: cpu: Starting RTL generation for module 'soc_system_aux_imu_0_cpu'
+Info: cpu:   Generation command is [exec C:/PROGRAMS/Quartus/quartus/bin64//eperlcmd.exe -I C:/PROGRAMS/Quartus/quartus/bin64//perl/lib -I C:/programs/quartus/quartus/sopc_builder/bin/europa -I C:/programs/quartus/quartus/sopc_builder/bin/perl_lib -I C:/programs/quartus/quartus/sopc_builder/bin -I C:/programs/quartus/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/programs/quartus/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/programs/quartus/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/programs/quartus/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/programs/quartus/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=soc_system_aux_imu_0_cpu --dir=C:/Users/mgaraj2/AppData/Local/Temp/alt7561_1618852006672974923.dir/0021_cpu_gen/ --quartus_bindir=C:/PROGRAMS/Quartus/quartus/bin64/ --verilog --config=C:/Users/mgaraj2/AppData/Local/Temp/alt7561_1618852006672974923.dir/0021_cpu_gen//soc_system_aux_imu_0_cpu_processor_configuration.pl  --do_build_sim=0  ]
+Info: cpu: # 2018.01.30 15:20:49 (*) Starting Nios II generation
+Info: cpu: # 2018.01.30 15:20:49 (*)   Checking for plaintext license.
+Info: cpu: # 2018.01.30 15:20:50 (*)   Couldn't query license setup in Quartus directory C:/PROGRAMS/Quartus/quartus/bin64/
+Info: cpu: # 2018.01.30 15:20:50 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2018.01.30 15:20:50 (*)   LM_LICENSE_FILE environment variable is empty
+Info: cpu: # 2018.01.30 15:20:50 (*)   Plaintext license not found.
+Info: cpu: # 2018.01.30 15:20:50 (*)   No license required to generate encrypted Nios II/e.
+Info: cpu: # 2018.01.30 15:20:50 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2018.01.30 15:20:50 (*)   Creating all objects for CPU
+Info: cpu: # 2018.01.30 15:20:51 (*)   Generating RTL from CPU objects
+Info: cpu: # 2018.01.30 15:20:51 (*)   Creating plain-text RTL
+Info: cpu: # 2018.01.30 15:20:51 (*) Done Nios II generation
+Info: cpu: Done RTL generation for module 'soc_system_aux_imu_0_cpu'
+Info: cpu: "aux_imu_0" instantiated altera_nios2_gen2_unit "cpu"
+Info: cpu: Starting RTL generation for module 'soc_system_aux_radio_0_cpu'
+Info: cpu:   Generation command is [exec C:/PROGRAMS/Quartus/quartus/bin64//eperlcmd.exe -I C:/PROGRAMS/Quartus/quartus/bin64//perl/lib -I C:/programs/quartus/quartus/sopc_builder/bin/europa -I C:/programs/quartus/quartus/sopc_builder/bin/perl_lib -I C:/programs/quartus/quartus/sopc_builder/bin -I C:/programs/quartus/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/programs/quartus/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/programs/quartus/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/programs/quartus/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/programs/quartus/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=soc_system_aux_radio_0_cpu --dir=C:/Users/mgaraj2/AppData/Local/Temp/alt7561_1618852006672974923.dir/0022_cpu_gen/ --quartus_bindir=C:/PROGRAMS/Quartus/quartus/bin64/ --verilog --config=C:/Users/mgaraj2/AppData/Local/Temp/alt7561_1618852006672974923.dir/0022_cpu_gen//soc_system_aux_radio_0_cpu_processor_configuration.pl  --do_build_sim=0  ]
+Info: cpu: # 2018.01.30 15:20:52 (*) Starting Nios II generation
+Info: cpu: # 2018.01.30 15:20:52 (*)   Checking for plaintext license.
+Info: cpu: # 2018.01.30 15:20:52 (*)   Couldn't query license setup in Quartus directory C:/PROGRAMS/Quartus/quartus/bin64/
+Info: cpu: # 2018.01.30 15:20:52 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2018.01.30 15:20:52 (*)   LM_LICENSE_FILE environment variable is empty
+Info: cpu: # 2018.01.30 15:20:52 (*)   Plaintext license not found.
+Info: cpu: # 2018.01.30 15:20:52 (*)   No license required to generate encrypted Nios II/e.
+Info: cpu: # 2018.01.30 15:20:52 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2018.01.30 15:20:52 (*)   Creating all objects for CPU
+Info: cpu: # 2018.01.30 15:20:53 (*)   Generating RTL from CPU objects
+Info: cpu: # 2018.01.30 15:20:53 (*)   Creating plain-text RTL
+Info: cpu: # 2018.01.30 15:20:54 (*) Done Nios II generation
+Info: cpu: Done RTL generation for module 'soc_system_aux_radio_0_cpu'
+Info: cpu: "aux_radio_0" instantiated altera_nios2_gen2_unit "cpu"
+Info: fpga_interfaces: "hps_0" instantiated altera_interface_generator "fpga_interfaces"
+Info: hps_io: "hps_0" instantiated altera_hps_io "hps_io"
+Info: aux_imu_0_data_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "aux_imu_0_data_master_translator"
+Info: aux_imu_0_jtag_avalon_jtag_slave_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "aux_imu_0_jtag_avalon_jtag_slave_translator"
+Info: aux_imu_0_data_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "aux_imu_0_data_master_agent"
+Info: hps_0_h2f_axi_master_agent: "mm_interconnect_0" instantiated altera_merlin_axi_master_ni "hps_0_h2f_axi_master_agent"
+Info: aux_imu_0_jtag_avalon_jtag_slave_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "aux_imu_0_jtag_avalon_jtag_slave_agent"
+Info: aux_imu_0_jtag_avalon_jtag_slave_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "aux_imu_0_jtag_avalon_jtag_slave_agent_rsp_fifo"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
+Info: router_003: "mm_interconnect_0" instantiated altera_merlin_router "router_003"
+Info: router_004: "mm_interconnect_0" instantiated altera_merlin_router "router_004"
+Info: router_005: "mm_interconnect_0" instantiated altera_merlin_router "router_005"
+Info: router_006: "mm_interconnect_0" instantiated altera_merlin_router "router_006"
+Info: router_008: "mm_interconnect_0" instantiated altera_merlin_router "router_008"
+Info: router_010: "mm_interconnect_0" instantiated altera_merlin_router "router_010"
+Info: router_015: "mm_interconnect_0" instantiated altera_merlin_router "router_015"
+Info: router_017: "mm_interconnect_0" instantiated altera_merlin_router "router_017"
+Info: router_021: "mm_interconnect_0" instantiated altera_merlin_router "router_021"
+Info: router_023: "mm_interconnect_0" instantiated altera_merlin_router "router_023"
+Info: hps_0_h2f_axi_master_wr_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "hps_0_h2f_axi_master_wr_limiter"
+Info: Reusing file C:/PROJECTS/GHRD_quad_v4_0/GHRD/soc_system/synthesis/submodules/altera_avalon_sc_fifo.v
+Info: i2c_0_s1_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "i2c_0_s1_burst_adapter"
+Info: Reusing file C:/PROJECTS/GHRD_quad_v4_0/GHRD/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file C:/PROJECTS/GHRD_quad_v4_0/GHRD/soc_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_demux_003: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_003"
+Info: cmd_demux_004: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_004"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: cmd_mux_002: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_002"
+Info: Reusing file C:/PROJECTS/GHRD_quad_v4_0/GHRD/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: cmd_mux_004: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_004"
+Info: Reusing file C:/PROJECTS/GHRD_quad_v4_0/GHRD/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_demux_004: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_004"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file C:/PROJECTS/GHRD_quad_v4_0/GHRD/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_mux_003: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_003"
+Info: Reusing file C:/PROJECTS/GHRD_quad_v4_0/GHRD/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_mux_004: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_004"
+Info: Reusing file C:/PROJECTS/GHRD_quad_v4_0/GHRD/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: hps_0_h2f_axi_master_wr_cmd_width_adapter: "mm_interconnect_0" instantiated altera_merlin_width_adapter "hps_0_h2f_axi_master_wr_cmd_width_adapter"
+Info: Reusing file C:/PROJECTS/GHRD_quad_v4_0/GHRD/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file C:/PROJECTS/GHRD_quad_v4_0/GHRD/soc_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: border: "hps_io" instantiated altera_interface_generator "border"
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: soc_system: Done "soc_system" with 64 modules, 151 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

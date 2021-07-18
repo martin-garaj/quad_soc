@@ -1,0 +1,52 @@
+
+RIGHT JOYSTICK
+	CENTER_____ _____
+	20 40 dd 05 dc 05 db 05 dc 05 cb 05 e7 05 e8 03 e8 03 e8 03 dc 05 dc 05 dc 05 dc 05 dc 05 39 f3 
+	RIGHT _____
+	20 40 d0 07 dc 05 db 05 dc 05 dd 05 e9 05 e8 03 e8 03 e8 03 dc 05 dc 05 dc 05 dc 05 dc 05 30 f3
+	LEFT  _____
+	20 40 e8 03 dc 05 db 05 dc 05 dd 05 e9 05 e8 03 e8 03 e8 03 dc 05 dc 05 dc 05 dc 05 dc 05 1c f3 
+	UP          _____
+	20 40 df 05 d0 07 db 05 dc 05 cc 05 e7 05 e8 03 e8 03 e8 03 dc 05 dc 05 dc 05 dc 05 dc 05 40 f3
+	DOWN        _____
+	20 40 d4 05 e8 03 db 05 dc 05 dd 05 e9 05 e8 03 e8 03 e8 03 dc 05 dc 05 dc 05 dc 05 dc 05 24 f3 
+LEFT JOYSTICK
+	CENTER            _____ _____
+	20 40 db 05 dc 05 db 05 dc 05 cb 05 e7 05 e8 03 e8 03 e8 03 dc 05 dc 05 dc 05 dc 05 dc 05 3b f3
+	RIGHT                   _____
+	20 40 db 05 dc 05 db 05 d0 07 cc 05 e7 05 e8 03 e8 03 e8 03 dc 05 dc 05 dc 05 dc 05 dc 05 44 f3 
+	LEFT                    _____
+	20 40 db 05 dc 05 db 05 e8 03 cc 05 e7 05 e8 03 e8 03 e8 03 dc 05 dc 05 dc 05 dc 05 dc 05 30 f3
+	UP                _____
+	20 40 db 05 dc 05 d0 07 dc 05 cb 05 e8 05 e8 03 e8 03 e8 03 dc 05 dc 05 dc 05 dc 05 dc 05 43 f3
+	DOWN              _____
+	20 40 db 05 dc 05 e8 03 dc 05 cc 05 e7 05 e8 03 e8 03 e8 03 dc 05 dc 05 dc 05 dc 05 dc 05 2f f3
+CHANNEL 5  
+	VRA ANTI-CLOSKWISE            _____
+	20 40 db 05 dc 05 dc 05 dc 05 e8 03 e8 05 e8 03 e8 03 e8 03 dc 05 dc 05 dc 05 dc 05 dc 05 1e f3
+	VRA CLOCKISE                  _____
+	20 40 db 05 dc 05 dc 05 dc 05 d0 07 e6 05 e8 03 e8 03 e8 03 dc 05 dc 05 dc 05 dc 05 dc 05 34 f3
+CHANNEL 6 
+	VRB ANTI-CLOSKWISE                  _____
+	20 40 db 05 dc 05 dc 05 dc 05 ed 05 d0 07 e8 03 e8 03 e8 03 dc 05 dc 05 dc 05 dc 05 dc 05 2d f3
+	VRB CLOCKISE                        _____
+	20 40 db 05 dc 05 dc 05 dc 05 ec 05 e8 03 e8 03 e8 03 e8 03 dc 05 dc 05 dc 05 dc 05 dc 05 1a f3
+CHANNEL 7
+	SWA UP                                    _____
+	20 40 db 05 dc 05 dc 05 dc 05 ec 05 e1 05 e8 03 e8 03 e8 03 dc 05 dc 05 dc 05 dc 05 dc 05 1f f3 
+	SWA DOWN                                  _____
+	20 40 db 05 dc 05 dc 05 dc 05 ea 05 e1 05 d0 07 e8 03 e8 03 dc 05 dc 05 dc 05 dc 05 dc 05 35 f3
+CHANNEL 8
+	SWB UP                                          _____
+	20 40 db 05 dc 05 dc 05 dc 05 e4 05 e1 05 e8 03 e8 03 e8 03 dc 05 dc 05 dc 05 dc 05 dc 05 27 f3
+	SWB CENTER                                      _____
+	20 40 db 05 dc 05 dc 05 dc 05 e4 05 e1 05 e8 03 dc 05 e8 03 dc 05 dc 05 dc 05 dc 05 dc 05 31 f3
+	SWB DOWN                                        _____
+	20 40 db 05 dc 05 dc 05 dc 05 e2 05 e1 05 e8 03 d0 07 e8 03 dc 05 dc 05 dc 05 dc 05 dc 05 3d f3
+CHANNEL 9
+	KEY 1 UP                                              _____
+	20 40 db 05 dc 05 dc 05 dc 05 e2 05 e1 05 e8 03 e8 03 e8 03 dc 05 dc 05 dc 05 dc 05 dc 05 29 f3
+	KEY 1 DOWN                                            _____
+	20 40 db 05 dc 05 dc 05 dc 05 e2 05 e1 05 e8 03 e8 03 d0 07 dc 05 dc 05 dc 05 dc 05 dc 05 3d f3
+	
+

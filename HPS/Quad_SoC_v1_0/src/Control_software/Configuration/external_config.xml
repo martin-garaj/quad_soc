@@ -1,0 +1,101 @@
+
+<config>
+<!-- variables regarding radio control -->
+	<radio>
+		<protocol>0</protocol>						<!-- | 0 = iBus | -->
+		
+		<channel id="0">	
+			<limit_min>1000</limit_min>
+			<center_val>1500</center_val>
+			<limit_max>2000</limit_max>
+		</channel>
+		
+		<channel id="1">
+			<limit_min>1001</limit_min>
+			<center_val>1501</center_val>
+			<limit_max>2001</limit_max>
+		</channel>
+		
+		<channel id="2">
+			<limit_min>1002</limit_min>
+			<center_val>1502</center_val>
+			<limit_max>2002</limit_max>
+		</channel>
+		
+		<channel id="3">
+			<limit_min>1003</limit_min>
+			<center_val>1503</center_val>
+			<limit_max>2003</limit_max>
+		</channel>
+		
+		<channel id="4">
+			<limit_min>1004</limit_min>
+			<center_val>1504</center_val>
+			<limit_max>2004</limit_max>
+		</channel>
+		
+		<channel id="5">
+			<limit_min>1005</limit_min>
+			<center_val>1505</center_val>
+			<limit_max>2005</limit_max>
+		</channel>
+		
+		<channel id="6">
+			<limit_min>1006</limit_min>
+			<center_val>1506</center_val>
+			<limit_max>2006</limit_max>
+		</channel>
+		
+		<channel id="7">
+			<limit_min>1007</limit_min>
+			<center_val>1507</center_val>
+			<limit_max>2007</limit_max>
+		</channel>
+		
+		<channel id="8">
+			<limit_min>1008</limit_min>
+			<center_val>1508</center_val>
+			<limit_max>2008</limit_max>
+		</channel>
+		
+		<channel id="9">
+			<limit_min>1009</limit_min>
+			<center_val>1509</center_val>
+			<limit_max>2009</limit_max>
+		</channel>
+
+	</radio>
+	
+<!-- variables regarding sensors -->
+	<sensor>
+		
+		<imu id="0">
+			<component>0</component> 				<!-- 0 = MPUxxxx -->
+			<version>0</version>
+			<state>1</state>
+			<i2c_address>0x0001</i2c_address>
+		</imu>
+		
+		<imu id="1">
+			<component>0</component>
+			<version>0</version>
+			<state>1</state>
+			<i2c_address>0x0002</i2c_address>
+		</imu>
+		
+		<imu id="2">
+			<component>0</component>
+			<version>0</version>
+			<state>1</state>
+			<i2c_address>0x0003</i2c_address>
+		</imu>		
+
+		<barometer id="0">
+		</barometer>
+		
+		<gps id="0">
+		</gps>
+		
+	</sensor>
+
+</config>

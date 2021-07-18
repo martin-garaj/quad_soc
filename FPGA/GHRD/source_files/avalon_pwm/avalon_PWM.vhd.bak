@@ -1,0 +1,315 @@
+-------------------------------------------------------------------------------------------------
+-------------------------------------    AUTHOR & LICENSE    ------------------------------------
+-------------------------------------------------------------------------------------------------
+-- AUTHOR     : MARTIN GARAJ
+-- DATE        : June 2017
+-- Copyright (c) 2017 Martin Garaj
+-- LICENSE    : MIT license
+
+-------------------------------------------------------------------------------------------------
+----------------------------------------    KNOWN ISSUE   ---------------------------------------
+-------------------------------------------------------------------------------------------------
+-- Qsys requires the following directive to understand VHDL 2008
+-- (https://www.altera.com/support/support-resources/knowledge-base/solutions/rd05312011_49.html)
+-- altera vhdl_input_version vhdl_2008
+-------------------------------------------------------------------------------------------------
+-----------------------------------------    LIBRARIES   ----------------------------------------
+-------------------------------------------------------------------------------------------------
+library ieee; --Set visible the ieee library
+    use ieee.std_logic_1164.all; --Needed to use the ieee types
+    use ieee.numeric_std.all;    -- conversion to_unsigned
+    use ieee.std_logic_unsigned.all; -- airthmetic operation +/- and logic =
+    
+library work;
+    use work.common.all;    -- type array_of_std_logic_vector, function ceil_log2() 
+	 
+-------------------------------------------------------------------------------------------------
+------------------------------------    ENTITY - CONSTANTS   ------------------------------------
+-------------------------------------------------------------------------------------------------
+constant ADDRESS_SPACE_SIZE : integer := 64; -- for max(QUANTITY) = 16
+-- ADDRESS SPACE
+-- 		addr | register
+--			   0 | control register
+--			   1 | status register
+--          2 | prescaler
+--			   3 | info_0 register (QUANTITY)
+--			   4 | info_1 register (PRESCALER_COUNTER_LENGTH)
+--			   5 | info_2 register (PWM_COUNTER_LENGTH)
+--			   6 | info_3 register (BLANK_COUNTER_LENGTH)
+
+constant blank_reg_offset : integer := 16; -- for max(QUANTITY) = 16
+-- QUANTITY*1 | blank registers
+constant period_reg_offset : integer := 32; -- for max(QUANTITY) = 16
+-- QUANTITY*1 | period registers
+constant duty_reg_offset : integer := 48; -- for max(QUANTITY) = 16
+-- QUANTITY*1 | duty registers
+
+
+
+constant AVALON_BUS_SIZE : integer := 32;
+-- this is 32bit wide Avalon peripheral
+
+
+-------------------------------------------------------------------------------------------------
+------------------------------------    ENTITY - DEFINITION   -----------------------------------
+-------------------------------------------------------------------------------------------------
+entity avalon_PWM is
+    generic (
+            QUANTITY                  : integer := 4;
+				PRESCALER_COUNTER_LENGTH  : integer := 16;
+				PWM_COUNTER_LENGTH        : integer := 12;
+				BLANK_COUNTER_LENGTH      : integer := 6
+            );
+    port(
+            --Avalon MM slave ports
+                AB        : in std_logic_vector( (ceil_log2(ADDRESS_SPACE_SIZE))-1 downto 0);  
+                DBin      : in std_logic_vector((AVALON_BUS_SIZE-1) downto 0);  --Input Data Bus (or Write Data Bus)
+                DBout     : out std_logic_vector((AVALON_BUS_SIZE-1) downto 0);--Output Data Bus (or Read Data Bus)
+                wr        : in std_logic;                            --Write Signal (active when the master wants to write to this peripheral)
+                rd        : in std_logic;                            --Read Signal (active when the master wants to read from this peripheral)
+                    
+            --System Clock
+                clk : in std_logic;
+            --Reset Signal
+                rst : in std_logic;    
+                
+            -- PWM outputs
+                pwm_out : out std_logic_vector((QUANTITY-1) downto 0)
+        );             
+end entity;
+
+-------------------------------------------------------------------------------------------------
+---------------------------------------    ARCHITECTURE    --------------------------------------
+-------------------------------------------------------------------------------------------------
+architecture arch of avalon_PWM is
+-- SIGNALS DECLARATION
+
+    -- CHIP SELECT
+    -- converts binary avalon_address into one-hot vector (e.g. avalon_address = "010" -> chip_select = "00000100")
+    -- vector length is determined according to : QUANTITY*period_reg + QUANTITY*duty_reg + 1*control_reg + 1*status_reg
+    signal chip_select                : std_logic_vector(ADDRESS_SPACE_SIZE-1 downto 0);
+    
+    -- REGISTERS
+        -- control register
+        signal control_reg            : std_logic_vector(QUANTITY downto 0);
+		-- bits : high - [PWM_enable_X, PWM_enable_ ... , PWM_enable_0, reset] - low
+		signal reset_bit 			  : std_logic;
+		signal enable_bits            : std_logic_vector(QUANTITY-1 downto 0);
+        
+        -- status register
+        signal status_reg        : std_logic_vector((AVALON_BUS_SIZE-1) downto 0); -- maximum period value
+        
+        -- period register
+        -- stores the length of 1 PWM period as number of FPGA clock cycles
+        signal period_reg            : array_of_std_logic_vector((QUANTITY-1) downto 0)((COUNTER_SIZE-1) downto 0);
+
+        -- duty cycle register
+        -- stores the length of active part of duty cycle as number of FPGA clock cycles (duty_reg <= period_reg)
+        signal duty_reg                : array_of_std_logic_vector((QUANTITY-1) downto 0)((COUNTER_SIZE-1) downto 0);
+		
+		-- previous value of duty cycle register
+        -- stores the previous value of dytu_reg
+        -- the duty_reg_prev is updated only at the end of PWM period, the change of dytu_reg will get effective in the next PWM period
+        signal duty_reg_prev        : array_of_std_logic_vector((QUANTITY-1) downto 0)((COUNTER_SIZE-1) downto 0);
+    
+    -- COUNTERS
+    -- count the number of clock cycles within every PWM period
+    signal counter            : array_of_std_logic_vector((QUANTITY-1) downto 0)(COUNTER_SIZE downto 0); -- counter is 1 bit greater then necessary to prevent overflow
+    
+    -- PWM SIGNAL
+    -- stores the ON/OFF state within 1 PWM period
+    signal pwm_signal        : std_logic_vector((QUANTITY-1) downto 0);
+    
+    -- avalon MM
+    signal avalon_address        : std_logic_vector( (ceil_log2(ADDRESS_SPACE_SIZE))-1 downto 0);
+    signal avalon_writedata        : std_logic_vector((AVALON_BUS_SIZE-1) downto 0);
+    signal avalon_readdata        : std_logic_vector((AVALON_BUS_SIZE-1) downto 0);
+    signal avalon_write            : std_logic;
+    signal avalon_read            : std_logic;
+    signal avalon_waitrequest    : std_logic;
+    
+    -- system sugnals
+    signal clock                    : std_logic;
+    signal reset                    : std_logic;
+    
+-- COMPONENT DECLARATION
+    -- altera ALTIOBUF (outbut buffer, no open drain)
+    component output_buffer 
+        port(
+            datain    : IN STD_LOGIC_VECTOR (0 DOWNTO 0);
+            oe            : IN STD_LOGIC_VECTOR (0 DOWNTO 0);
+            dataout    : OUT STD_LOGIC_VECTOR (0 DOWNTO 0)
+        );
+    end component;
+    
+-------------------------------------------------------------------------------------------------
+-----------------------------------    ARCHITECTURE - BEGIN    ----------------------------------
+-------------------------------------------------------------------------------------------------
+begin
+-- CONCURENT STATEMENTS
+    -- inputs & outputs
+    -- port-to-port connections are sometimes difficult to track in simulation software, 
+    --    intermediate signals with verbose names are nice and easy to track
+    avalon_address <= AB;
+    avalon_writedata <= DBin;
+    DBout <= avalon_readdata;
+    avalon_write <= wr;
+    avalon_read <= rd;
+    clock <= clk;
+    reset <= rst;
+	
+	-- internal signals
+	reset_bit <= control_reg(RESET_BIT_N);
+	enable_bits <= control_reg(QUANTITY downto ENABLE_BIT_OFFSET);
+	status_reg <= std_logic_vector(to_unsigned(QUANTITY, AVALON_BUS_SIZE/2)) & std_logic_vector(to_unsigned(COUNTER_SIZE, AVALON_BUS_SIZE/2));
+
+----------------------------------- PROCESS
+-- CONTROL REGISTER
+    -- read/write
+    control_reg_proc: process (clock, reset) begin
+        if rising_edge(clock) and reset='1' then
+            -- reset
+            control_reg <= (others => '0');
+            avalon_readdata <= (others=>'Z');
+        elsif rising_edge(clock) then
+            -- write
+            if chip_select(CONTROL_REG_OFFSET)='1' and avalon_write='1' then
+                control_reg <= avalon_writedata(QUANTITY downto 0);
+            end if;
+            -- read
+            if chip_select(CONTROL_REG_OFFSET)='1' and avalon_read='1' then
+                avalon_readdata <= ( (AVALON_BUS_SIZE-1) downto (QUANTITY+1) => '0' ) & control_reg; 
+                report "avalon_readdata CONTROL";
+            else 
+                avalon_readdata <= (others=>'Z'); 
+            end if;
+        end if;
+    end process;
+    
+-- STATUS REGISTER
+    -- read-only
+    status_reg_proc: process (clock, reset) begin 
+        if rising_edge(clock) and reset='1' then
+            -- reset
+            avalon_readdata <= (others=>'Z');
+        elsif rising_edge(clock) then
+            -- read
+            if chip_select(STATUS_REG_OFFSET)='1' and avalon_read='1' then
+                avalon_readdata <=  status_reg; 
+                report "avalon_readdata STATUS";
+            else 
+                avalon_readdata <= (others=>'Z'); 
+            end if;
+        end if;
+    end process;
+    
+----------------------------------- GENERATE
+    -- CHIP SELECT
+    chip_select_gen: for I in 0 to ADDRESS_SPACE_SIZE-1 generate
+        chip_select(I) <= '1' when (I=avalon_address) else '0';
+    end generate chip_select_gen;
+
+    -- PWM REGISTERS
+    pwm_regs_gen: for I in 0 to (QUANTITY-1) generate
+    
+        -- avalon MM period registers
+        period_reg_X_proc: process (clock, reset) begin
+            if rising_edge(clock) and ((reset = '1') or (reset_bit = '0')) then
+                -- reset
+                period_reg(I) <= (others => '0');
+                avalon_readdata <= (others=>'Z');
+            elsif rising_edge(clock) then
+                -- write
+                if chip_select(I+PERIOD_REG_OFFSET)='1' and avalon_write='1' then
+                    period_reg(I) <= avalon_writedata((COUNTER_SIZE-1) downto 0);
+                end if;
+                -- read
+                if chip_select(I+PERIOD_REG_OFFSET)='1' and avalon_read='1' then
+                    avalon_readdata <= ( (AVALON_BUS_SIZE-1) downto COUNTER_SIZE => '0' ) & period_reg(I); -- append '0's & period_reg
+                else 
+                    avalon_readdata <= (others=>'Z'); 
+                end if;
+            end if;
+        end process;
+
+        -- avalon MM duty registers
+        duty_reg_X_proc: process (clock, reset) begin
+            if rising_edge(clock) and ((reset = '1') or (reset_bit = '0')) then
+                -- reset
+                duty_reg(I) <= (others => '0');
+                avalon_readdata <= (others=>'Z');
+            elsif rising_edge(clock) then
+                -- write
+                if chip_select(I+DUTY_REG_OFFSET)='1' and avalon_write='1' then
+                    duty_reg(I) <= avalon_writedata((COUNTER_SIZE-1) downto 0);
+                end if;
+                -- read
+                if chip_select(I+DUTY_REG_OFFSET)='1' and avalon_read='1' then
+                    avalon_readdata <= ( (AVALON_BUS_SIZE-1) downto COUNTER_SIZE => '0' ) & duty_reg(I); -- append '0's & duty_reg
+                else 
+                    avalon_readdata <= (others=>'Z'); 
+                end if;
+            end if;
+        end process;
+
+    end generate pwm_regs_gen;
+	
+	-- TIMING LOGIC
+    pwm_logic_gen: for I in 0 to (QUANTITY-1) generate
+	
+	    -- timer process    
+        timer_X_proc: process (clock, reset) begin
+            if rising_edge(clock) and reset = '1' then
+                -- reset
+                counter(I) <= (others => '0');
+                pwm_signal(I) <= '0';
+                duty_reg_prev(I) <= (others => '0');
+                
+            -- PWM enabled
+            elsif rising_edge(clock) and (enable_bits(I) ='1') then
+                -- keep the counter going
+                counter(I) <= counter(I) + 1;
+                
+                -- check for period end
+                if (unsigned(counter(I))>=unsigned(period_reg(I))) then
+                    -- update duty_reg_prev with new value (current) value
+                    duty_reg_prev(I) <= duty_reg(I);
+                    -- reset counter
+                    counter(I) <= (others => '0');
+                end if;    
+                
+                -- check beginning of period
+                if (unsigned(counter(I)) >= 0) then
+                    pwm_signal(I) <= '1';
+                end if;    
+                
+                -- check duty cycle
+                if (unsigned(counter(I))>=unsigned(duty_reg_prev(I))) then
+                    pwm_signal(I) <= '0';
+                end if;    
+                
+            -- PWM disabled
+            elsif rising_edge(clock) and (enable_bits(I) ='0') then
+                -- stop and reset the coutner
+                counter(I) <= (others => '0');
+                
+                -- stop PWM
+                pwm_signal(I) <= '0';                
+                
+            end if;
+            
+        end process;
+		
+	end generate pwm_logic_gen;
+
+    -- BUFFER GENERATION
+    buffer_gen: for I in 0 to (QUANTITY-1) generate
+        output_buffer_X_inst : output_buffer
+            port map(
+                datain(0)     => pwm_signal(I),
+                oe(0)          => enable_bits(I),
+                dataout(0)     => pwm_out(I)
+            );
+    end generate buffer_gen;
+
+end architecture;

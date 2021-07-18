@@ -1,0 +1,423 @@
+
+
+
+
+
+Both I2Cs are running at 400 kHz clock rate
+
+only the 1st I2C routine enabled
+
+
+
+
+
+
+
+root@cyclone5:~/quadcopter/quad# ./quad_dual_nios_v0_2.axf
+MAIN FUNCTION
+PWM_module::enable one_hot = 1
+PWM_module::enable control_reg = 3
+PWM_module::enable one_hot = 2
+PWM_module::enable control_reg = 7
+PWM_module::enable one_hot = 4
+PWM_module::enable control_reg = f
+device : 52
+MPU6050 connection successful
+Initializing DMP...
+
+
+Resetting MPU6050...
+Disabling sleep mode...
+Selecting user bank 16...
+Selecting memory byte 6...
+Checking hardware revision...
+Revision @ user[16][6] = -
+Resetting memory bank selection to 0...
+Reading OTP bank valid flag...
+OTP bank : valid
+Reading gyro offset values...
+X gyro offset = 0
+Y gyro offset = 0
+Z gyro offset = 0
+Enabling interrupt latch, clear on any read, AUX bypass enabled
+Setting magnetometer mode to power-down...
+Setting magnetometer mode to fuse access...
+Reading mag magnetometer factory calibration...
+Adjustment X/Y/Z = 0/0/9
+Setting magnetometer mode to power-down...
+Writing DMP code to MPU memory banks (
+Success! DMP code written and verified.
+Configuring DMP and related settings...
+Writing DMP configuration to MPU memory banks (232 bytes in config def)
+Success! DMP configuration written and verified.
+Setting DMP and FIFO_OFLOW interrupts enabled...
+Setting sample rate to 200Hz...
+Setting clock source to Z Gyro...
+Setting DLPF bandwidth to 42Hz...
+Setting external frame sync to TEMP_OUT_L[0]...
+Setting gyro sensitivity to +/- 2000 deg/sec...
+Setting DMP configuration bytes (function unknown)...
+Clearing OTP Bank flag...
+Setting X/Y/Z gyro offsets to previous values...
+I2C WRITE WORDS : 1|
+I2C WRITE WORDS : 1|
+I2C WRITE WORDS : 1|
+Setting X/Y/Z gyro user offsets to zero...
+Writing final memory update 1/19 (function unknown)...
+Writing final memory update 2/19 (function unknown)...
+Resetting FIFO...
+Reading FIFO count...
+Current FIFO count=
+Writing final memory update 3/19 (function unknown)...
+Writing final memory update 4/19 (function unknown)...
+Disabling all standby flags...
+Setting accelerometer sensitivity to +/- 2g...
+Setting motion detection threshold to 2...
+Setting zero-motion detection threshold to 156...
+Setting motion detection duration to 80...
+Setting zero-motion detection duration to 0...
+Setting AK8975 to single measurement mode...
+Setting up AK8975 read slave 0...
+Setting up AK8975 write slave 2...
+Setting up slave access delay...
+Enabling default interrupt behavior/no bypass...
+Enabling I2C master mode...
+Resetting FIFO...
+Rewriting I2C master mode enabled because...I don't know
+Enabling and resetting DMP/FIFO...
+Writing final memory update 5/19 (function unknown)...
+Writing final memory update 6/19 (function unknown)...
+Writing final memory update 7/19 (function unknown)...
+Writing final memory update 8/19 (function unknown)...
+Writing final memory update 9/19 (function unknown)...
+Writing final memory update 10/19 (function unknown)...
+Writing final memory update 11/19 (function unknown)...
+Reading final memory update 12/19 (function unknown)...
+Writing final memory update 13/19 (function unknown)...
+Writing final memory update 14/19 (function unknown)...
+Writing final memory update 15/19 (function unknown)...
+Writing final memory update 16/19 (function unknown)...
+Writing final memory update 17/19 (function unknown)...
+Waiting for FIRO count >= 46...
+Reading FIFO...
+Reading interrupt status...
+Writing final memory update 18/19 (function unknown)...
+Waiting for FIRO count >= 48...
+Reading FIFO...
+Reading interrupt status...
+Waiting for FIRO count >= 48...
+Reading FIFO...
+Reading interrupt status...
+Writing final memory update 19/19 (function unknown)...
+Disabling DMP (you turn it on later)...
+Setting up internal 48-byte (default) DMP packet buffer...
+Resetting FIFO and clearing INT status one last time...
+I2C WRITE WORDS : 1|
+I2C WRITE WORDS : 1|
+I2C WRITE WORDS : 1|
+I2C WRITE WORDS : 1|
+Enabling DMP...
+--------------------------------------------------------------------------------------------------------
+NIOS II ENABLE ROUTINE
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.21254e+09
+main loop cycles        : 23751011
+sensor routine 0 cycles : 410
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.24599e+09
+main loop cycles        : 23849366
+sensor routine 0 cycles : 412
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.24611e+09
+main loop cycles        : 23843285
+sensor routine 0 cycles : 412
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.25377e+09
+main loop cycles        : 23871990
+sensor routine 0 cycles : 412
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.24611e+09
+main loop cycles        : 23850154
+sensor routine 0 cycles : 413
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.25382e+09
+main loop cycles        : 23866052
+sensor routine 0 cycles : 412
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.24608e+09
+main loop cycles        : 23850030
+sensor routine 0 cycles : 412
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.25382e+09
+main loop cycles        : 23871451
+sensor routine 0 cycles : 413
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.2461e+09
+main loop cycles        : 23850228
+sensor routine 0 cycles : 412
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.24613e+09
+main loop cycles        : 23843471
+sensor routine 0 cycles : 412
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.25378e+09
+main loop cycles        : 23872069
+sensor routine 0 cycles : 412
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.24611e+09
+main loop cycles        : 23849987
+sensor routine 0 cycles : 412
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.25381e+09
+main loop cycles        : 23872341
+sensor routine 0 cycles : 413
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.24612e+09
+main loop cycles        : 23843615
+sensor routine 0 cycles : 412
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.25378e+09
+main loop cycles        : 23871632
+sensor routine 0 cycles : 413
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.2461e+09
+main loop cycles        : 23850110
+sensor routine 0 cycles : 412
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.24612e+09
+main loop cycles        : 23843415
+sensor routine 0 cycles : 412
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.25378e+09
+main loop cycles        : 23872179
+sensor routine 0 cycles : 412
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.24612e+09
+main loop cycles        : 23850164
+sensor routine 0 cycles : 412
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.25382e+09
+main loop cycles        : 23872299
+sensor routine 0 cycles : 413
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.24613e+09
+main loop cycles        : 23843573
+sensor routine 0 cycles : 412
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.25378e+09
+main loop cycles        : 23870977
+sensor routine 0 cycles : 412
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.24609e+09
+main loop cycles        : 23849850
+sensor routine 0 cycles : 413
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.24611e+09
+main loop cycles        : 23850000
+sensor routine 0 cycles : 412
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.25382e+09
+main loop cycles        : 23865876
+sensor routine 0 cycles : 412
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.24608e+09
+main loop cycles        : 23850022
+sensor routine 0 cycles : 412
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.25381e+09
+main loop cycles        : 23872211
+sensor routine 0 cycles : 413
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.24612e+09
+main loop cycles        : 23843630
+sensor routine 0 cycles : 412
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.25378e+09
+main loop cycles        : 23872037
+sensor routine 0 cycles : 412
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.24612e+09
+main loop cycles        : 23849426
+sensor routine 0 cycles : 412
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.2461e+09
+main loop cycles        : 23849966
+sensor routine 0 cycles : 412
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.25382e+09
+main loop cycles        : 23865599
+sensor routine 0 cycles : 413
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.24608e+09
+main loop cycles        : 23849839
+sensor routine 0 cycles : 412
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.25382e+09
+main loop cycles        : 23872136
+sensor routine 0 cycles : 413
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.24611e+09
+main loop cycles        : 23849955
+sensor routine 0 cycles : 412
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.25382e+09
+main loop cycles        : 23865952
+sensor routine 0 cycles : 413
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.24608e+09
+main loop cycles        : 23849003
+sensor routine 0 cycles : 412
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.24611e+09
+main loop cycles        : 23849878
+sensor routine 0 cycles : 412
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.25381e+09
+main loop cycles        : 23865479
+sensor routine 0 cycles : 413
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.24608e+09
+main loop cycles        : 23849821
+sensor routine 0 cycles : 412
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.25383e+09
+main loop cycles        : 23872311
+sensor routine 0 cycles : 412
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.24611e+09
+main loop cycles        : 23850042
+sensor routine 0 cycles : 413
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.25383e+09
+main loop cycles        : 23865771
+sensor routine 0 cycles : 412
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.24608e+09
+main loop cycles        : 23849226
+sensor routine 0 cycles : 412
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.2461e+09
+main loop cycles        : 23849881
+sensor routine 0 cycles : 412
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.25381e+09
+main loop cycles        : 23872076
+sensor routine 0 cycles : 413
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.24612e+09
+main loop cycles        : 23843376
+sensor routine 0 cycles : 412
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.25378e+09
+main loop cycles        : 23872166
+sensor routine 0 cycles : 412
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.24611e+09
+main loop cycles        : 23850174
+sensor routine 0 cycles : 412
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+----------------PERFORMANCE TESTING----------------
+MEASUREMENT TIME        : 8.25381e+09
+main loop cycles        : 23865898
+sensor routine 0 cycles : 413
+sensor routine 1 cycles : 0
+radio routine cycles    : 1000
+^Z[10]+  Stopped                   ./quad_dual_nios_v0_2.axf
+root@cyclone5:~/quadcopter/quad#

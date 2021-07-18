@@ -1,0 +1,56 @@
+
+
+	*) Quartus compilation : Performance - High Effort
+
+	soc_system
+		clk_0 (50 MHz)
+		pll_0 (100 MHz)
+
+		HPS peripherals
+			aux_radio_0_mem
+			aux_imu_0_mem
+			hps_0_led
+			pwm_0
+			pwm_1
+			uart_0
+			i2c_0
+			select_0
+			reset_0
+		aux_radio_0
+			aux_radio_0_mem
+			aux_radio_0_ram
+			aux_radio_0_led
+			aux_radio_0_jtag
+			aux_radio_0_sysid
+			uart_0
+		aux_imu_0
+			aux_imu_0_mem
+			aux_imu_0_ram
+			aux_imu_0_led
+			aux_imu_0_jtag
+			aux_imu_0_sysid
+			i2c_0	
+			select_0
+			reset_0
+
+//==============================================================================================//
+//						LEDS						//
+//==============================================================================================//
+// LED NUMBER 	    |       7      |       6      |       5      |       4      |       3      |       2      |       1      |      0       |
+//     		    |==============|==============|==============|==============|==============|==============|==============|==============|	 
+// LED NAME 	    |   pwm_1[4]   |aux_radio_0[2]|aux_radio_0[1]|aux_radio_0[0]| aux_imu_0[3] | aux_imu_0[2] | aux_imu_0[1] | aux_imu_0[0] |
+//     		    |==============|==============|==============|==============|==============|==============|==============|==============|	 
+
+RADIO
+// | ON | ON | ON | - Reset state
+// | OFF| ON | OFF| - Initialization done
+// | ON | OFF| ON | - Packet's checksum correct
+// | ON | OFF| ON | - Packet's checksum incorrect
+// | ON | OFF| OFF| - Stalling
+
+IMU
+// | ON | ON | ON | ON | - Reset state
+// | OFF| ON | ON | OFF| - Initialization done
+// | OFF| OFF| OFF| ON | - Packet received
+// | ON | ON | OFF| OFF| - Packet not received
+// | ON | OFF| OFF| OFF| - Stalling

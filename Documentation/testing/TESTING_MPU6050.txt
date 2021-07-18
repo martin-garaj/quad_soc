@@ -1,0 +1,44 @@
+TESTING MPU6050 with DMP
+
+
+	- sensor : MPU6050 from geeetech, red one with bent pins (90 degrees)
+	- running quad_dual_nios_v0_15.axf compiled for 1 sensor
+	- tests running consecutively, without powering-off the sensor
+	- every test about 5-10 seconds
+	- driffting of X0 (yaw) seems to occur in every test
+	- pull-ups of 2.2k
+	- running at 3.3V
+	- data rate 67 packets/s
+	
+	|   TEST #   |    RESULT   |
+	|   0        |    OK       |
+	|   1        |    OK       |
+	|   2        |    OK       |
+	|   3        |    OK       |
+	|   4        |    OK       |
+	|   6        |    OK       |
+	|   7        |    XX       | - ERROR(1) (3 re-tries)
+	|   8        |    OK       |
+	|   9        |    OK       |
+	|   10       |    OK       |
+	|   11       |    OK       |
+	|   12       |    XX       | - ERROR(1) (3 re-tries)
+	|   13       |    OK       |
+	|   14       |    OK       |
+	|   15       |    OK       |
+	|   16       |    OK       |
+	|   17       |    OK       |
+	|   18       |    OK       |
+	|   19       |    XX       | - ERROR(1) (3 re-tries)
+	|   20       |    XX       | - ERROR(1) (3 re-tries)
+    |   21       |    OK       |
+	|   22       |    OK       |
+	|   23       |    OK       |
+	|   24       |    OK       |
+	|   25       |    OK       |
+	|   26       |    XX       | - ERROR(1) (3 re-tries)
+	|   27       |    OK       |
+	|   28       |    OK       |
+	|   29       |    OK       |
+	|   30       |    OK       |
+	|   31       |    OK       |
