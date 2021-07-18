@@ -12,13 +12,13 @@ The repo is intended to run on Atlas-SoC board with Cyclone-V ARM-FPGA chip. Fur
 ###### Atlas-SoC board (top)
 ![./Documentation/Board-Top.jpg](./Documentation/Board-Top.jpg?raw=true "Atlas-SoC board (top)")
 
-<> ###### Atlas-SoC board (bottom)
-<> ![./Documentation/Board-Bottom.jpg](./Documentation/Board-Bottom.jpg?raw=true "Atlas-SoC board (bottom)")
-
 ###### Custom support board to house IMUs and Radio
+Custom PCB board that fits on top of the Atlas-SoC board. It provides a simple way to hold all components firmly in place, which was found very usefull when debugging the UART and I2C communication, since the issues with improper connections is eliminated. 
 ![./Quad_support_board/pcb.png](./Quad_support_board/pcb.png?raw=true "Quad Support Board")
+
 ###### Inertial measurement unit (IMU) MPU 6500
 ![./Documentation/PMU6500.png](./Documentation/PMU6500.png?raw=true "MPU 6500")
+
 ###### Radio Flysky FS-iA10B
 The pins for UART communication are highligted (UART TX (cyan) and RX (green))
 ![./Documentation/Flysky_FS-IA10B.png](./Documentation/Flysky_FS-IA10B.png?raw=true "Flysky FS-iA10B")
@@ -53,5 +53,15 @@ For **TL;DR**, the Quartus II project has 1.5 GB and is based on default Golden 
 ![./Documentation/Quad_SoC_hardware_software_v2.png](./Documentation/Quad_SoC_hardware_software_v2.png?raw=true "Quad SoC structure and components")
 
 
-###### Files
-[Qsys.png](./Documentation/Qsys.png)
+
+###### Source files
+[Quad_SoC_v1_0/src/main.cpp](./HPS/Quad_SoC_v1_0/src/main.cpp) Main file with main loop running in ARM under Linux. 
+  - initialize FPGA components and then hand-off the control to Nios II co-processors
+  - handles 2-way communication with co-processors through FPGA components _aux_radio_0_mem_ and _aux_imu_0_mem_
+    - sets co-processor control registers
+    - polls co-processor registers
+    - reads information processed by co-processors from memory
+  - performs high level data processing (navigation, PID control, etc)
+
+###### Documentation files
+[Qsys.png](./Documentation/Qsys.png) A screenshot of Qsys (System integration tool) depicting the connections of FPGA components.
