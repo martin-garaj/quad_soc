@@ -18,8 +18,8 @@ The repo is intended to run on Atlas-SoC board with Cyclone-V ARM-FPGA chip. Fur
 ###### Inertial measurement unit (IMU) MPU 6500
 ![./Documentation/PMU6500.png](./Documentation/PMU6500.png?raw=true "MPU 6500")
 ###### Radio Flysky FS-iA10B
-The pins for UART communication are highligted (UART <span style="color:#00FFFF">TX</span> and <span style="color:green">RX</span>)
-![./Documentation/Flysky FS-IA10B.png](./Documentation/Flysky FS-IA10B.png?raw=true "Flysky FS-IA10B")
+The pins for UART communication are highligted (UART TX (cyan) and RX (green))
+![./Documentation/Flysky FS-IA10B.png](./Documentation/Flysky FS-IA10B.png?raw=true "Flysky FS-iA10B")
 
 ## Cyclone-V
 Cyclone-V from Altera, or Zinq-7000 Xilinx (the only competitor at the moment), is a hybrid architecture integrating ARM core(s) and FPGA fabric coupled with Interconnect on single System-on-Chip (SoC) device. The internal architerure is depicted below.
