@@ -14,6 +14,9 @@ The repo is intended to run on Atlas-SoC board with Cyclone-V ARM-FPGA chip. The
 ###### Atlas-SoC board (bottom)
 ![./Documentation/Board-Bottom.jpg](./Documentation/Board-Bottom.jpg?raw=true "Atlas-SoC board (bottom)")
 
+<img src="h./Documentation/Board-Bottom.jpg" width="50%">
+
+
 ## Cyclone-V
 Cyclone-V from Altera, or Zinq-7000 Xilinx (the only competitor at the moment), is a hybrid architecture integrating ARM core(s) and FPGA fabric coupled with Interconnect on single System-on-Chip (SoC) device. The internal architerure is depicted below.
 
