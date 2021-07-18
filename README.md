@@ -11,8 +11,10 @@ This repo does not include 1.5 GB Quartus II project! Instead, this repo contain
 The repo is intended to run on Atlas-SoC board with Cyclone-V ARM-FPGA chip. Furthermore, there is a custom PCB of a Quad Support Board which holds Radio Flysky FS-iA10B and up to 4x Inertial Measurement Units MPU 6500. The hardware components are depicted below, so one can check whether, for instance, the newer version of the product has compatible pinout (especially the MPU 6500).
 ###### Atlas-SoC board (top)
 ![./Documentation/Board-Top.jpg](./Documentation/Board-Top.jpg?raw=true "Atlas-SoC board (top)")
-###### Atlas-SoC board (bottom)
-![./Documentation/Board-Bottom.jpg](./Documentation/Board-Bottom.jpg?raw=true "Atlas-SoC board (bottom)")
+
+[//]: <> ###### Atlas-SoC board (bottom)
+[//]: <> ![./Documentation/Board-Bottom.jpg](./Documentation/Board-Bottom.jpg?raw=true "Atlas-SoC board (bottom)")
+
 ###### Custom support board to house IMUs and Radio
 ![./Quad_support_board/pcb.png](./Quad_support_board/pcb.png?raw=true "Quad Support Board")
 ###### Inertial measurement unit (IMU) MPU 6500
