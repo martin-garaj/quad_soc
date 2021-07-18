@@ -1,5 +1,5 @@
 # TL;DR
-Skip to **How to use this project** to see how to get to the relevant files.
+Skip to **How to use this repo** to see how to get to the relevant files.
 
 # Quad_SoC
 Quadcopter controller based on Altera Cyclone-V. The motivation of multi-processor system is fault tolerance, from sensor failures (the project gets data from up to 3 IMUs) to tolerance in processing errors (e.g. radio communication is handled by separate processor, such that main processor makes decisions when the signal is bad, without the need to handle UART communication and correction sum calculation).
@@ -9,7 +9,7 @@ This repo does not include 1.5 GB Quartus II project! Instead, this repo contain
 
 
 
-# How to use this project
+# How to use this repo
 For **TL;DR**, to navigate through this repo, use the diagram below and link to the files to get what you need. The code within the files is well documented (_grey round boxes_) and should be sufficient to understand the main aspects of the code together with documentation files (_blue round boxes_).
 
 ###### Cyclone-V internal structure with documentation
