@@ -59,6 +59,7 @@ For **TL;DR**, to navigate through this repo, use the diagram below and link to 
 
 [HOW_TO_wishbone_interface.docx](./Documentation/Avalon_i2c_master/HOW_TO_wishbone_to_avalon_interface/_NOTES/HOW_TO_wishbone_interface.docx): documents how to go from _Wishbone_ interface (generic interface for OpenCores FPGA components) to proprietary _Avalon_ interface (Alteras HPS-to-FPGA Bridge interface)
   - it is very useful, when one can generate a VHDL wrapper, that handles the translation of _Wishbone_ to _Avalon_, since then one can create a trully integrated components using high-level tools like Qsys
+  - the VHDL [wishbone-to-avalon wrapper](./FPGA/GHRD/source_files/avalon_i2c_master/avalon_i2c_master.vhd) for i2c FPGA component
 
 [checksum_testing.docx](./Documentation/testing/iBus/checksum_testing.docx): guidline on how to calculate checksum for packets sent through Flysky iBus protocol
   - the checksum calculation is implemented in C and can be found in [aux_radio_0/src/main.c](FPGA/GHRD/software/aux_radio_0/src/main.c) [line 185](https://github.com/martin-garaj/quad_soc/blob/e8f651f6a8f62508dc0a7bcb314ce51ea4f3d151/FPGA/GHRD/software/aux_radio_0/src/main.c#L185)
@@ -106,5 +107,12 @@ The content of FPGA, connections in FPGA fabric, GPIO connections and external c
 ###### Cyclone-V internal structure
 ![./Documentation/Quad_SoC_hardware_software.png](./Documentation/Quad_SoC_hardware_software.png?raw=true "Quad SoC structure and components")
 
+[i2c_0](FPGA/GHRD/source_files/avalon_i2c_master/i2c_master_top.vhd): VHDL source code for i2c FPGA component (all credit goes to the author **Richard Herveille**)
+
+[wishbone-to-avalon wrapper](./FPGA/GHRD/source_files/avalon_i2c_master/avalon_i2c_master.vhd): VHDL wrapper to translate _Wishbone_ to _Avalon_ interface
+
+[pwm_0](./FPGA/GHRD/source_files/avalon_pwm/avalon_PWM.vhd): VHDL file of the PWM FPGA component
+
+[package_common.vhd](FPGA/GHRD/source_files/package_common.vhd): useful functions for VHDL programming, for instance binary operations require _ceil_log2_ function
 
 
