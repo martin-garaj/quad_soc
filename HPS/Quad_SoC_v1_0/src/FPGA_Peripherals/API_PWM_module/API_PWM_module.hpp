@@ -1,17 +1,14 @@
 //============================================================================
-// Name        : MPSO_PVP.cpp
-// Authors     : Roberto Fernandez Molanes 	(robertofem@gmail.com)
-//				 Martin Garaj 				(garaj.martin@gmail.com)
-//				 Jianfeng Zhou				(599102934@qq.com)
+// Authors     :  Martin Garaj 				(garaj.martin@gmail.com)
 // Version     : 1.0 (February 2017)
 // Copyright   : -
 // Description : This files define a class to easily control the UART_module
-//				 component in the FPGA. The UART_module is capable of transmitting
-//				 and receiving 1 byte at the time. No FIFO buffer is present, as
-//				 for the current application.
-//				 The communication is based on POLLING, the flags for receiving and
-//				 transmitting needs to be checked prior to reading/writing to RX
-//				 and TX registers.
+//		component in the FPGA. The UART_module is capable of transmitting
+//		and receiving 1 byte at the time. No FIFO buffer is present, as
+//		for the current application.
+//		The communication is based on POLLING, the flags for receiving and
+//		transmitting needs to be checked prior to reading/writing to RX
+//		and TX registers.
 //============================================================================
 
 #ifndef _API_PWM_MODULE_HPP_
