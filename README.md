@@ -1,3 +1,6 @@
+# TL;DR
+Skip to **How to use this project** to see how to navigate through the files and go directly to files that are related to your questions.
+
 # Quad_SoC
 Quadcopter controller based on Altera Cyclone-V. The motivation of multi-processor system is fault tolerance, from sensor failures (the project gets data from up to 3 IMUs) to tolerance in processing errors (e.g. radio communication is handled by separate processor, such that main processor makes decisions when the signal is bad, without the need to handle UART communication and correction sum calculation).
 
@@ -32,3 +35,15 @@ The content of FPGA, connections in FPGA fabric, GPIO connections and external c
 
 ###### Cyclone-V internal structure
 ![./Documentation/Quad_SoC_hardware_software.png](./Documentation/Quad_SoC_hardware_software.png?raw=true "Quad SoC structure and components")
+
+
+# How to use this project
+For **TL;DR**, the Quartus II project has 1.5 GB and is based on default Golden Hardware Reference Design (GHRD) for Cyclone-V. Therefore, this repo includes only the custom files, that make the magic happen as well as handy documentation and solution to issues that I faced when developing this project. Tonavigate through this repo, use the diagram below and link to the files to get what you need. The code within the files is well documented (_grey round boxes_) and should be sufficient to understand the main aspects of the code together with documentation files (_blue round boxes_).
+
+###### Cyclone-V internal structure
+![./Documentation/Quad_SoC_hardware_software_v2.png](./Documentation/Quad_SoC_hardware_software_v2.png?raw=true "Quad SoC structure and components")
+
+
+
+
+
